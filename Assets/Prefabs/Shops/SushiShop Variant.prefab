@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5896783956023778705
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1382032108803903636, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69ec5f66332d1e843b0bf368c0bb14c0, type: 3}
+    - target: {fileID: 4126804305320760183, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_Name
+      value: SushiShop Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6398329878040220299, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708070288494495577, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8182669723898451275}
+    - target: {fileID: 7708070288494495577, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 7708070288494495577, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SushiShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4852895008699168955, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4126804305320760183, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8182669723898451275}
+  m_SourcePrefab: {fileID: 100100000, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+--- !u!1 &618482051969055708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6431386445873997389, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+  m_PrefabInstance: {fileID: 5896783956023778705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2974796726165723936 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8691116185428641457, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+  m_PrefabInstance: {fileID: 5896783956023778705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6810618903811305885 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1103865749492902924, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+  m_PrefabInstance: {fileID: 5896783956023778705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &7534750210836614886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4126804305320760183, guid: 5c07aa291b4ca0a459962a36e6906af1, type: 3}
+  m_PrefabInstance: {fileID: 5896783956023778705}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8182669723898451275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7534750210836614886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed555bd0f95c1042bb8a4301f7617cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: {fileID: 11400000, guid: 2bbcdfd0145e3cf4fb73ca1381b1d556, type: 2}
+  levelData: {fileID: 11400000, guid: 0344930c7286a724e9572de80c72a821, type: 2}
+  foodData: {fileID: 11400000, guid: 924ea6344d2aedf4aa53dc85707f09e2, type: 2}
+  SpriteRenderer: {fileID: 2974796726165723936}
+  LevelText: {fileID: 6810618903811305885}
+  UpgradeButton: {fileID: 618482051969055708}
