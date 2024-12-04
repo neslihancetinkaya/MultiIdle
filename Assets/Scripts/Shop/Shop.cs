@@ -29,7 +29,6 @@ public class Shop : MonoBehaviour, IShop
         {
             //do buy 
             _currentLevel++;
-            Debug.Log(_currentLevel);
             Money.Value -= levelData.GetUpgradeCost(_currentLevel - 1);
             UpdateShop();
         }

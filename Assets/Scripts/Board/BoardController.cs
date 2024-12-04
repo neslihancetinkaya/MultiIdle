@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Utils.Event;
 
 // Singleton
 public class BoardController : MonoBehaviour
 {
     public static BoardController Instance { get; private set; }
+    [SerializeField] private GameEvent FirstShopAdded;
 
     private List<Shop> _shops; // add sushi taco and pizza data
     private int _maxLevel;
+    private bool _isFirst = true;
 
     private void OnEnable()
     {
@@ -29,6 +32,11 @@ public class BoardController : MonoBehaviour
 
     private void AddShopToList(Shop shop)
     {
+        if (_isFirst)
+        {
+            _isFirst = false;
+            FirstShopAdded.Raise();
+        }
         _shops.Add(shop);
     }
     

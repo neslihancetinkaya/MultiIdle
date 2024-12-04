@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Money: {fileID: 11400000, guid: 2bbcdfd0145e3cf4fb73ca1381b1d556, type: 2}
-  levelData: {fileID: 11400000, guid: 0d7d4215bb9715a4f8abad7901e6cd34, type: 2}
   foodData: {fileID: 11400000, guid: 72fbfbd633207654a9222bd16e1d0ca3, type: 2}
+  levelData: {fileID: 11400000, guid: 0d7d4215bb9715a4f8abad7901e6cd34, type: 2}
   SpriteRenderer: {fileID: 1006391185372071736}
   LevelText: {fileID: 8807879099747806597}
   UpgradeButton: {fileID: 3182558986123896772}
