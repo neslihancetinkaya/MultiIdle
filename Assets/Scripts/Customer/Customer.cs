@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,6 +9,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private NavMeshAgent Agent;
     [SerializeField] private IntRef Money;
+    [SerializeField] private TextMeshProUGUI LevelText;
 
     private int _baseMoney = 1;
     private SelectBehavior selectBehavior = new SelectRandom();
@@ -39,8 +41,8 @@ public class Customer : MonoBehaviour
         collision.gameObject.TryGetComponent<Shop>(out var shop);
         if(shop == _shop)
         {
-            CustomerSpawner.Instance.Despawn(this.gameObject);
             Money.Value += _baseMoney * _level;
+            CustomerSpawner.Instance.Despawn(this.gameObject);            
         }
     }
 
@@ -53,7 +55,7 @@ public class Customer : MonoBehaviour
     {  
         _shop = selectBehavior.SelectShop(this, BoardController.Instance.GetShops());
         _level = _shop.GetCurrentLevel();
-
+        SetLevelText(_level);
         _currentFood = _shop.GetFoodData();
         spriteRenderer.sprite = _currentFood.GetSprite();
         _doMove = true;
@@ -68,8 +70,14 @@ public class Customer : MonoBehaviour
         _currentFood = null;
         spriteRenderer.sprite = null;
         _target = null;
+        _level = 0;
+        SetLevelText(_level);
     }
 
+    private void SetLevelText(int level)
+    {
+        LevelText.text = "Level " + _level.ToString();
+    }
     private void Move()
     {
         Agent.SetDestination(_target.position);
