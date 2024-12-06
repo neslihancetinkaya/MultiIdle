@@ -10,7 +10,6 @@ public class FoodButton : MonoBehaviour
     {
         spawnTransform = myUIController.transform;
         myUIController.DeactivateCanvas();
-        myUIController.DeactivateModel();
         factory.CreateShop(spawnTransform.position);
     }
 }

@@ -1,21 +1,28 @@
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using UnityEngine.Rendering;
+using UnityEngine.AI;
+using Utils.RefValue;
 
 public class Customer : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private float Speed;
+    [SerializeField] private NavMeshAgent Agent;
+    [SerializeField] private IntRef Money;
 
-    private SelectBehavior selectBehavior = new SelectShopByLevel();
-
+    private int _baseMoney = 1;
+    private SelectBehavior selectBehavior = new SelectRandom();
     private int _level;
     private Shop _shop;    
     private FoodData _currentFood;
     private Transform _target;
     private bool _doMove;
 
+
+    private void Start()
+    {
+        Agent.updateRotation = false;
+        Agent.updateUpAxis = false;
+    }
     private void OnEnable()
     {
         Initialize();
@@ -27,16 +34,26 @@ public class Customer : MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collision.gameObject.TryGetComponent<Shop>(out var shop);
+        if(shop == _shop)
+        {
+            CustomerSpawner.Instance.Despawn(this.gameObject);
+            Money.Value += _baseMoney * _level;
+        }
+    }
+
     private void OnDisable()
     {
         Reset();
     }
 
     private void Initialize()
-    {        
-        _level = Random.Range(0, BoardController.Instance.GetMaxLevel()) + 1; // +1 used to adjust value
-
+    {  
         _shop = selectBehavior.SelectShop(this, BoardController.Instance.GetShops());
+        _level = _shop.GetCurrentLevel();
+
         _currentFood = _shop.GetFoodData();
         spriteRenderer.sprite = _currentFood.GetSprite();
         _doMove = true;
@@ -55,8 +72,7 @@ public class Customer : MonoBehaviour
 
     private void Move()
     {
-        //Change to: move to x pos first then move to y
-        transform.position = Vector3.MoveTowards(transform.position, _target.position, Speed);
+        Agent.SetDestination(_target.position);
     }
 
     public int GetLevel()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CustomerSpawner : MonoBehaviour
 {
+    public static CustomerSpawner Instance { get; private set; }
     private const int POOL_SIZE = 10;
 
     [SerializeField] private float RepeatTime;
@@ -13,6 +14,10 @@ public class CustomerSpawner : MonoBehaviour
     private Queue<GameObject> customerPool;
     private bool _canSpawn;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         customerPool = new Queue<GameObject>();
@@ -48,12 +53,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         customer.SetActive(false);
         customerPool.Enqueue(customer);
-    }
-
-    private IEnumerator DisableCustomerAfterDelay(GameObject customer, float delay) {
-        yield return new WaitForSeconds(delay);
-        ReturnCustomerToPool(customer);
-    }
+    }    
 
     private void HandleSpawn()
     {
@@ -62,9 +62,7 @@ public class CustomerSpawner : MonoBehaviour
         if (customer != null)
         {
             customer.transform.position = transform.position;
-            customer.SetActive(true);
-
-            StartCoroutine(DisableCustomerAfterDelay(customer, 5f));
+            customer.SetActive(true);            
         }
     }
     

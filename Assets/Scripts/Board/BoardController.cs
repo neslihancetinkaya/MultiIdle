@@ -16,7 +16,6 @@ public class BoardController : MonoBehaviour
     {
         _maxLevel = 0;
         Shop.OnShopAdded += AddShopToList;
-        Shop.OnShopUpdated += GetMax;
     }
     private void Awake()
     {
@@ -27,7 +26,6 @@ public class BoardController : MonoBehaviour
     private void OnDisable()
     {
         Shop.OnShopAdded -= AddShopToList;
-        Shop.OnShopUpdated -= GetMax;
     }
 
     private void AddShopToList(Shop shop)
@@ -37,9 +35,12 @@ public class BoardController : MonoBehaviour
             _isFirst = false;
             FirstShopAdded.Raise();
         }
+        if (_shops.Contains(shop))
+        {
+            _shops.Remove(shop);
+        }
         _shops.Add(shop);
     }
-    
     private void GetMax(Shop shop)
     {
         if (shop.GetCurrentLevel() > _maxLevel)
@@ -50,10 +51,5 @@ public class BoardController : MonoBehaviour
     public List<Shop> GetShops()
     {
         return _shops;
-    }
-
-    public int GetMaxLevel()
-    {
-        return _maxLevel;
     }
 }

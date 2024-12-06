@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using Utils.RefValue;
 
@@ -6,8 +7,14 @@ public class BuyAreaController : MonoBehaviour
     [SerializeField] private GameObject ChoosePanel;
     [SerializeField] private IntRef Money;
     [SerializeField] private float AreaCost;
+    [SerializeField] private TextMeshProUGUI ValueText;
 
-    //Close the Panel and set active the building menu
+    private void Awake()
+    {
+        // TODO: Use FloatRef for AreaCost, increase it every time an area purchased
+        ValueText.text = AreaCost.ToString();
+    }
+
     public void OnBuyClick()
     {
         if(Money.Value >= AreaCost)
@@ -16,6 +23,3 @@ public class BuyAreaController : MonoBehaviour
         }
     }
 }
-
-
-// should level be data based or should every level hold their own value?

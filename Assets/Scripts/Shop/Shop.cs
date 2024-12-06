@@ -15,6 +15,7 @@ public class Shop : MonoBehaviour, IShop
     private int _currentLevel;
     public static event Action<Shop> OnShopAdded;
     public static event Action<Shop> OnShopUpdated;
+
     public virtual void Initialize()
     {
         //set model
